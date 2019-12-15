@@ -10,6 +10,8 @@ export interface NavigationNavigateActionPayload {
   action?: NavigationNavigateAction;
 
   key?: string;
+
+  shouldDropStackOnTransitionComplete?: boolean;
 }
 
 export interface NavigationNavigateAction
