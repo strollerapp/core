@@ -89,6 +89,10 @@ export const navigate = (
   if (payload.key) {
     action.key = payload.key;
   }
+  if (payload.shouldDropStackOnTransitionComplete) {
+    action.shouldDropStackOnTransitionComplete =
+      payload.shouldDropStackOnTransitionComplete;
+  }
   return action;
 };
 
