@@ -14,6 +14,10 @@ const createParamGetter = route => (paramName, defaultValue) => {
 };
 
 function getChildNavigation(navigation, childKey, getCurrentParentNavigation) {
+  if (!navigation) {
+    return null;
+  }
+
   const children = getChildrenNavigationCache(navigation);
   const childRoute = navigation.state.routes.find(r => r.key === childKey);
 
