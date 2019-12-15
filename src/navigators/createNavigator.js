@@ -40,7 +40,9 @@ function createNavigator(NavigatorView, router, navigationConfig) {
           prevDescriptors[route.key] &&
           route === prevDescriptors[route.key].state &&
           screenProps === currentState.screenProps &&
-          currentState.themeContext === currentState.theme
+          (currentState.themeContext === currentState.theme ||
+            // hack for issue with app crashing on drop stack with nested tab navigators
+            currentState.theme === undefined)
         ) {
           acc[route.key] = prevDescriptors[route.key];
           return acc;
